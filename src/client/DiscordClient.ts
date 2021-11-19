@@ -14,6 +14,7 @@ export default class DiscordClient extends Client {
     constructor(options: ClientOptions) {
         super(options);
         (async () => {
+            await Handler.registerEvents(this, '../events').then(() => console.log(this.events))
             await Handler.registerCommands(this, '../commands').then(() => console.log(this.commands))
 
         })()
