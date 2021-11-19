@@ -16,10 +16,10 @@ export const AdminRolePermissionData = (client: DiscordClient): ApplicationComma
 ]}
 
 export const ModRolePermissionData = (client: DiscordClient): ApplicationCommandPermissionData[] => {return [
-    {id: '845770774073966632', type: 1, permission: false}, //! Member
-    {id: '845764263738212382', type: 1, permission: true}, //! Mod
-    {id: '901556109310042175', type: 1, permission: true}, //! Trainee
-    {id: '845763194655998002', type: 1, permission: true}, //! Admin
+    {id: client.config.roles.member, type: 1, permission: false}, //! Member
+    {id: client.config.roles.mod, type: 1, permission: true}, //! Mod
+    {id: client.config.roles.trainee, type: 1, permission: true}, //! Trainee
+    {id: client.config.roles.admin, type: 1, permission: true}, //! Admin
 ]}
 
 export type RolePermission = 'MOD' | 'ADMIN' | 'USER'
