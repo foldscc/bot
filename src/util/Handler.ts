@@ -28,7 +28,7 @@ export default class Handler extends null {
         for (const file of files) {
         const stat = await fs.lstat(path.join(filePath, file));
         if (stat.isDirectory()) this.registerEvents(client, path.join(dir, file));
-        if (file.endsWith('.js') || file.endsWith('.ts') && !file.endsWith('.dev.ts') || !file.endsWith('.dev.js')) {
+        if (file.endsWith('.js') || file.endsWith('.ts') && !file.endsWith('.dev.ts') && !file.endsWith('.dev.js')) {
             const { default: Event } = await import(path.join(dir, file));
             const event = new Event();
             client.events.set(event.getName(), event);
