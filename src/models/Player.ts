@@ -1,4 +1,4 @@
-import {STRING, INTEGER, } from 'sequelize';
+import { STRING, INTEGER } from 'sequelize';
 
 import Client from'../client/SequelizeClient'
 const Player = Client.define('player', {
