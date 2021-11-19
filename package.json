@@ -1,0 +1,45 @@
+{
+  "name": "bot",
+  "version": "0.0.0-BETA",
+  "description": "The new, fixed version of the old FoldBot.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "tsc && node dist/index.js",
+    "dev": "tsc-watch --allowJs --onSuccess \"nodemon dist/index.js --server=test --publish \"",
+    "prod": "tsc && nodemon dist/index.js --publish"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foldscc/bot.git"
+  },
+  "keywords": [
+    "folds",
+    "bot",
+    "discord",
+    "discordapi",
+    "api",
+    "foldboat"
+  ],
+  "author": "yanuu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foldscc/bot/issues"
+  },
+  "homepage": "https://github.com/foldscc/bot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.8.1",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "chalk": "^4.1.2",
+    "discord.js": "^13.3.0",
+    "dotenv": "^10.0.0",
+    "erela.js": "^2.3.3",
+    "erela.js-spotify": "^1.2.0",
+    "hypixel-api-reborn": "^9.0.3",
+    "i18next": "^21.3.3",
+    "ms": "^2.1.3",
+    "mysql2": "^2.3.2",
+    "path": "^0.12.7",
+    "sequelize": "^6.8.0"
+  }
+}
