@@ -23,7 +23,6 @@ export default class Util extends null {
         //@ts-ignore
         
         const res = await client.restAPI.put(`/applications/${client?.application?.id}/guilds/${client.config.id}/commands/permissions`, { body: slashCommands})
-        console.log(res)
     }
 
     
