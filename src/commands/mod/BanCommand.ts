@@ -11,18 +11,18 @@ export default class BanCommand extends Command {
     perms = 'MOD' as RolePermission
     data = new SlashCommandBuilder().setDefaultPermission(this.getDefaultPermission())
         .addSubcommand(cmd => cmd.setName('by-ign')
-            .setDescription('Ban a user by his IGN (or UUID)')
-            .addStringOption(opt => opt.setRequired(true).setName('ign').setDescription('The IGN/UUID of a user to ban').setRequired(true))
-            .addStringOption(opt => opt.setName('reason').setDescription('The reason of the ban').setRequired(true))
-
+            .setDescription('Zbanuj użytkownika używając jego IGN (lub UUID)')
+            .addStringOption(opt => opt.setRequired(true).setName('ign').setDescription('IGN/UUID użytkownika').setRequired(true))
+            .addStringOption(opt => opt.setName('reason').setDescription('Powód bana').setRequired(true))
+            .addStringOption(opt => opt.setName('duration').setDescription('Czas trwania bana'))
         )
         .addSubcommand(cmd => cmd.setName('by-mention')
-            .setDescription('Ban a user by his Mention')
-            .addMentionableOption(opt => opt.setName('mention').setDescription(`A mention of the user to ban`).setRequired(true))
-            .addStringOption(opt => opt.setName('reason').setDescription('The reason of the ban').setRequired(true))
+            .setDescription('Zbanuj użytkownika używając jego wzmianki')
+            .addMentionableOption(opt => opt.setName('mention').setDescription(`Wzmianka użytkownika do zablokowania`).setRequired(true))
+            .addStringOption(opt => opt.setName('reason').setDescription('Powód bana').setRequired(true))
+            .addStringOption(opt => opt.setName('duration').setDescription('Czas trwania bana'))
         )
-        async run(client: DiscordClient, cmd: CommandInteraction, options: CommandInteractionOptionResolver, guild: Guild, user: Model<any, any>, userLanguage: any) {
-            client.emit('debug', '[DEV] Client has found a command executed!')   
+        async run(client: DiscordClient, cmd: CommandInteraction, options: CommandInteractionOptionResolver, guild: Guild, user: Model<any, any>) {            
         }
     
     
