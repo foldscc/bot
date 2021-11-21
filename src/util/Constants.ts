@@ -23,3 +23,13 @@ export const ModRolePermissionData = (client: DiscordClient): ApplicationCommand
 ]}
 
 export type RolePermission = 'MOD' | 'ADMIN' | 'USER'
+
+export enum Colors {
+    INFO = '#cbdbfe',
+    LOADED = '#187bcd',
+    LOADING = '#03254C',
+    ERROR = '#992D22',
+    LOG = '#7289DA',
+    GLURPLE = '#8d6afe',
+    WARNING = '#eed202'
+}
