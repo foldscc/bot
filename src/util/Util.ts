@@ -5,6 +5,17 @@ export default class Util extends null {
         throw new Error(`The class ${this.constructor.name} is not supposed to be instantiated!`)
     }   
 
+    
+
+    static getRandomEnumValue = (enumeration: any) => {
+        const values = Object.keys(enumeration)
+        const enumKey = values[Math.floor(Math.random() * values.length)];
+        //@ts-ignore
+        return enumeration[enumKey];
+
+
+    }
+
     static publishCommands = async (client: DiscordClient) => {        
         const body = client.commands.map(k => k.getData())
         const response = await client.restAPI.put(`/applications/${client?.application?.id}/guilds/${client.config.id}/commands`, { body })
