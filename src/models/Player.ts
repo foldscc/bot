@@ -1,4 +1,4 @@
-import { STRING, INTEGER } from 'sequelize';
+import { STRING, INTEGER, BOOLEAN } from 'sequelize';
 
 import Client from'../client/SequelizeClient'
 const Player = Client.define('player', {
@@ -18,6 +18,27 @@ const Player = Client.define('player', {
         type: STRING,
         unique: true,
         allowNull: false
+    },
+    uuid: {
+        type: STRING,
+        unique: true,
+        allowNull: false
+    },
+    rank: {
+        type: STRING,
+        unique: false,
+        allowNull: true,
+        defaultValue: null,
+    },
+    guildRank: {
+        type: INTEGER,
+        unique: false,
+        allowNull: false,
+        defaultValue: 0
+    },
+    blocked: {
+        type: BOOLEAN,
+        defaultValue: false,
     }
 })
 
