@@ -5,7 +5,7 @@ const SequelizeClient = new Sequelize((process.env.MYSQL_DATABASE ?? MYSQL_DATAB
     host: process.env.MYSQL_HOST ?? MYSQL_HOST,
     database: process.env.MYSQL_DATABASE ?? MYSQL_DATABASE,
     dialect: 'mysql',
-    logging: (sqlContent: string, sqlTiming: number | undefined) => console.log(chalk.cyan(`MySQL: ${chalk.green(sqlContent)} \nat timing ${sqlTiming}`))
+    logging: (sqlContent: string, sqlTiming: number | undefined) => console.log(chalk.cyan(`MySQL: ${chalk.green(sqlContent)}`))
 })
 
 export default SequelizeClient
