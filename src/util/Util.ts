@@ -16,12 +16,20 @@ export default class Util extends null {
 
     }
 
+    static deleteFromObject = (obj: any ) => {
+        delete obj.options;
+        return obj;
+    }
+
     static publishCommands = async (client: DiscordClient) => {        
-        const body = client.commands.map(k => k.getData())
+        const body = client.commands.map(k => k.getData()).map((val) => val?.options?.length === 0 ? this.deleteFromObject(val) : val)
+        
+        
         const response = await client.restAPI.put(`/applications/${client?.application?.id}/guilds/${client.config.id}/commands`, { body })
 
         const slashCommands = client.commands.map((cmd) => {
             if(!cmd.getPerms()) return;
+            
             //@ts-ignore
             const apiCommand = response.find((k) => k.name === cmd.getName())
 
@@ -29,7 +37,8 @@ export default class Util extends null {
                 id: apiCommand.id,
                 permissions: cmd.getPerms()
             }
-        }).map((el) => el)
+        }).filter(el => el)
+        
         if(!slashCommands || slashCommands.length === 0) return;
         //@ts-ignore
         
