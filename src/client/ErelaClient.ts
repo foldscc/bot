@@ -2,6 +2,8 @@ import { Manager, Node } from "erela.js";
 import client from '..';
 import Spotify from 'erela.js-spotify';
 import chalk from 'chalk';
+import { config } from "dotenv";
+config();
 import { ERELA_HOST, ERELA_PORT, ERELA_PASSWORD, SPOTIFY_SECRET, SPOTIFY_ID} from '../config/auth.dev.json'
 const ErelaClient = new Manager({
     nodes: [
