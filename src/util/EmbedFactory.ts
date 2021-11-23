@@ -47,7 +47,7 @@ export default class EmbedFactory {
 
     static generateLoadingEmbed(isLoaded: boolean = false, title: string, description: string): MessageEmbed {
         return new MessageEmbed()
-            .setTitle(`${isLoaded ? title : `<a:f_Loadingbuffering:845825240193171486> Loading`}`)
+            .setTitle(`${isLoaded ? title : `<a:f_Loadingbuffering:845825240193171486> Loading - ${title}`}`)
             .setDescription(description)
             .setFooter("© 2021 - Folds 🎉")
             .setTimestamp()
