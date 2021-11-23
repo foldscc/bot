@@ -6,8 +6,11 @@ import { DISCORD_TOKEN } from '../config/auth.dev.json'
 import discordData from '../config/discord-data.json'
 import Handler from '../util/Handler';
 import Event from '../structure/Event'
+import { Manager } from 'erela.js';
+import ErelaClient from './ErelaClient';
 export default class DiscordClient extends Client {
     
+    private _erela: Manager = ErelaClient;
     private _cmds = new Collection<string, Command>();
     private _events = new Collection<string, Event>();
     private _DJSRest = new REST({version: '9'})
@@ -35,6 +38,10 @@ export default class DiscordClient extends Client {
     }
     get commands() {
         return this._cmds
+    }
+
+    get erela() {
+        return this._erela
     }
 
     get restAPI() {
