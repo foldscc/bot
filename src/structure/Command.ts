@@ -13,7 +13,7 @@ export default abstract class Command {
     perms: RolePermission = 'USER';
 
 
-    async run(client: DiscordClient, interaction: CommandInteraction, options: Omit<CommandInteractionOptionResolver<CacheType>, "getMessage" | "getFocused">, guild: Guild, userProfile?: Model<any, any>, userLanguage?: any) {}
+    async run(client: DiscordClient, interaction: CommandInteraction, options: Omit<CommandInteractionOptionResolver<CacheType>, "getMessage" | "getFocused">, guild: Guild, userProfile: Model<any, any> | null) {}
 
     
     getData() {
