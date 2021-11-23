@@ -7,9 +7,8 @@ export default class ReadyEvent extends Event {
     eventName = 'ready'
 
     async run(client: DiscordClient) {
-        
+    
         console.log(chalk.green(`${client.user!.tag} is now ready.`))
-        console.log(client.commands.map(k => k.getData()))
         await Util.publishCommands(client)
     }
 }

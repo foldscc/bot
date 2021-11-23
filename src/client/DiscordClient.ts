@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import { Client, ClientOptions, Collection } from 'discord.js'
 import { REST } from '@discordjs/rest'
 import Command from '../structure/Command';
@@ -14,8 +15,8 @@ export default class DiscordClient extends Client {
     constructor(options: ClientOptions) {
         super(options);
         (async () => {
-            await Handler.registerEvents(this, '../events').then(() => console.log(this.events))
-            await Handler.registerCommands(this, '../commands').then(() => console.log(this.commands))
+            await Handler.registerEvents(this, '../events').then(() => this.emit('debug', chalk.red(`Successfully registered events!`)))
+            await Handler.registerCommands(this, '../commands').then(() => this.emit('debug', chalk.red(`Successfully registered commands!`)))
 
         })()
         
