@@ -22,7 +22,7 @@ export default class BanCommand extends Command {
             .addStringOption(opt => opt.setName('reason').setDescription('Powód bana').setRequired(true))
             .addStringOption(opt => opt.setName('duration').setDescription('Czas trwania bana'))
         )
-        async run(client: DiscordClient, cmd: CommandInteraction, options: CommandInteractionOptionResolver, guild: Guild, user: Model<any, any>) {            
+        async run(client: DiscordClient, cmd: CommandInteraction, options: CommandInteractionOptionResolver, guild: Guild, user: Model<any, any> | null) {  
         }
     
     
