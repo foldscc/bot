@@ -21,6 +21,7 @@ const ErelaClient = new Manager({
     ], 
     send(id, payload) {
         const guild = client.guilds.cache.get(id);
+        client.emit('debug', chalk.cyan(`[DEV] Sent payload to guild ${guild?.name}`))
         if(guild) guild.shard.send(payload)
     }
 }).on('nodeError', (node: Node, err: Error) => {
