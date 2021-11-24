@@ -7,7 +7,7 @@ import { Model } from 'sequelize/types';
 import EmbedFactory from '../../util/EmbedFactory';
 
 
-export default class BanCommand extends Command {
+export default class PingCommand extends Command {
     commandName = 'ping'
     commandDescription = 'Pong!'
     perms = 'USER' as RolePermission
