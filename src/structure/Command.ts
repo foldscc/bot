@@ -8,7 +8,7 @@ export default abstract class Command {
     abstract commandName: string;
     abstract commandDescription: string;
     dmAllowed?: false;
-    data?: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder; 
+    data?: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder | Omit<SlashCommandBuilder, "addSubcommandGroup" | "addSubcommand">; 
     devOnly?: boolean;
     perms: RolePermission = 'USER';
 
