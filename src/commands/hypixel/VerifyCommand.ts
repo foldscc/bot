@@ -76,7 +76,7 @@ export default class VerifyCommand extends Command {
 
 
         
-        cmd.reply({embeds: [EmbedFactory.generateRandomColorEmbed(`<a:f_Verified:849747695253323786> - Zweryfikowano!`, `Sukces! Pomyślnie zweryfikowano twoje konto, połączono je z \`${playerResponse.nickname}\`! Zaraz zostanie przyznany Ci dostęp do kategorii gildyjnej!`).setImage(`https://crafatar.com/renders/head/${playerResponse.uuid}`)]})
+        cmd.reply({embeds: [EmbedFactory.generateRandomColorEmbed(`<a:f_Verified:849747695253323786> - Zweryfikowano!`, `Sukces! Pomyślnie zweryfikowano twoje konto, połączono je z \`${playerResponse.nickname}\`! Zaraz zostanie przyznany Ci dostęp do kategorii gildyjnej!`).setImage(`https://crafatar.com/renders/body/${playerResponse.uuid}`)]})
 
     }
 }
