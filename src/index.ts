@@ -7,6 +7,7 @@ import { DISCORD_TOKEN } from './config/auth.dev.json';
 (async () => {
     config();
     await client.login(process.env.DISCORD_TOKEN ?? DISCORD_TOKEN)
+    client.on('raw', (data) => client.erela.updateVoiceState(data))
 })();
 
 
