@@ -1,6 +1,5 @@
 import { MessageEmbed } from "discord.js"
 import { Colors } from "./Constants"
-import Util from "./Util"
 
 export default class EmbedFactory {
     constructor() {
@@ -41,7 +40,7 @@ export default class EmbedFactory {
             .setDescription(description)
             .setTimestamp()
             .setFooter("© 2021 - Folds 🎉")
-            .setColor(Util.getRandomEnumValue(Colors))
+            .setColor('RANDOM')
     }
 
     static generateLoadingEmbed(isLoaded: boolean = false, title: string, description: string): MessageEmbed {
