@@ -41,7 +41,6 @@ export default class EmbedFactory {
             .setDescription(description)
             .setTimestamp()
             .setFooter("© 2021 - Folds 🎉")
-
             .setColor(Util.getRandomEnumValue(Colors))
     }
 
