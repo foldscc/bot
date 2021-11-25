@@ -8,8 +8,10 @@ import Handler from '../util/Handler';
 import Event from '../structure/Event'
 import { Manager } from 'erela.js';
 import ErelaClient from './ErelaClient';
+import {Client as HyClient} from 'hypixel-api-reborn';
+import { HYPIXEL_KEY } from '../config/auth.dev.json'
 export default class DiscordClient extends Client {
-    
+    private _hypixel = new HyClient(process.env.HYPIXEL_KEY ?? HYPIXEL_KEY)
     private _erela: Manager = ErelaClient;
     private _cmds = new Collection<string, Command>();
     private _events = new Collection<string, Event>();
@@ -29,6 +31,10 @@ export default class DiscordClient extends Client {
 
     set config(config) {
         this._config = config;
+    }
+
+    get hypixel() {
+        return this._hypixel
     }
     get config() {
         return this._config
