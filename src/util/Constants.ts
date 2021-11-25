@@ -33,3 +33,24 @@ export enum Colors {
     GLURPLE = '#8d6afe',
     WARNING = '#eed202'
 }
+
+
+export enum Ranks {
+    'Default' = 0,
+    'VIP' = 1,
+    'VIP+' = 2,
+    'MVP' = 3,
+    'MVP+' = 4,
+    'MVP++' = 5,
+    'YouTube' = 6,
+    'Helper' = 7,
+    'Admin' = 8
+}
+export enum Roles {
+    'Member' = 0,
+    'Active' = 1,
+    'Nolife' = 2,
+    'Mod' = 3,
+    'Admin' = 4,
+    'Guild Master' = 5,
+}
