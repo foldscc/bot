@@ -27,7 +27,7 @@ export default class EmbedFactory {
 
     static generateInfoEmbed(title: string, description: string): MessageEmbed {
         return new MessageEmbed()
-            .setTitle(`ℹ️ - ${title}`)
+            .setTitle(`${title}`)
             .setDescription(description)
             .setTimestamp()
             .setColor(Colors.INFO)
