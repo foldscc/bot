@@ -37,7 +37,7 @@ export default class VerifyCommand extends Command {
         const playerDiscord = playerResponse.socialMedia.filter(e => e.id === "DISCORD")[0]
 
         if(playerDiscord.link !== cmd.user.tag) {
-            cmd.reply({embeds: [EmbedFactory.generateErrorEmbed(`Register`, `Twój tag Discord, \`${cmd.user.tag}\`, nie pasuje do nazwy konta połączonego z \`${playerResponse.nickname}\` - \`${playerDiscord}\`!`).setImage('https://folds.cc/images/hypixelhelp.gif')]})
+            cmd.reply({embeds: [EmbedFactory.generateErrorEmbed(`Register`, `Twój tag Discord, \`${cmd.user.tag}\`, nie pasuje do nazwy konta połączonego z \`${playerResponse.nickname}\` - \`${playerDiscord.link}\`!`).setImage('https://folds.cc/images/hypixelhelp.gif')]})
             return;
         }
         const hypixelGuild = await client.hypixel.getGuild('player', `${playerResponse.uuid}`)
