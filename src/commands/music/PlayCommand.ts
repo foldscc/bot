@@ -8,7 +8,11 @@ import { Model } from 'sequelize/types';
 import EmbedFactory from '../../util/EmbedFactory';
 
 
+<<<<<<< HEAD
 export default class PlayCommand extends Command {
+=======
+export default class UnverifyCommand extends Command {
+>>>>>>> 62c7cc3ead53ee2529a1008deb01addc1e73550c
     commandName = 'play'
     commandDescription = 'Zrób radio na swoim kanale głosowym'
     ephemeral = false;
@@ -29,8 +33,12 @@ export default class PlayCommand extends Command {
                 guild: cmd!.guild!.id,
                 voiceChannel: member.voice.channelId || undefined,
                 textChannel: cmd.channel!.id!,
+<<<<<<< HEAD
                 selfDeafen: true,
                 volume: 50
+=======
+                selfDeafen: true
+>>>>>>> 62c7cc3ead53ee2529a1008deb01addc1e73550c
             })
             
             await player.connect()
