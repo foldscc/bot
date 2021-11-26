@@ -29,7 +29,8 @@ export default class PlayCommand extends Command {
                 guild: cmd!.guild!.id,
                 voiceChannel: member.voice.channelId || undefined,
                 textChannel: cmd.channel!.id!,
-                selfDeafen: true
+                selfDeafen: true,
+                volume: 50
             })
             
             await player.connect()
